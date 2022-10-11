@@ -27,7 +27,7 @@ export class UserComponent {
         fax: '',
         maggiorenne: false,
         prodottiInteresse: '',
-        sesso: '',
+        sesso: 'maschio',
         partitaIva: '',
         codiceFiscale: '',
         rememberMe: false

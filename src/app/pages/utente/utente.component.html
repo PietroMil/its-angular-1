@@ -10,6 +10,8 @@
                 <option value="PersonaFisica">Persona Fisica</option>
 
             </select>
+            <label for="ragionesocialeInput">Ragione Sociale</label>
+
         </div>
 
 
@@ -18,7 +20,7 @@
             <div class="form-floating">
                 <input type="text" class="form-control" id="ragioneSocialeInput" name="ragioneSocialeInput"
                     placeholder="Ragione Sociale" [(ngModel)]="jsonIn.ragioneSociale" required>
-                <label for="nameInput">Ragione Sociale</label>
+                <label for="nameInput">Nome</label>
             </div>
             <div class="form-floating">
                 <input type="email" class="form-control" id="pecInput" name="pecInput" placeholder="PEC"
@@ -49,13 +51,13 @@
                 <label for="nameInput">Cognome</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="sexInput" name="sexInput" placeholder="Sesso"
+
+                <select id="sexInput" class="form-select" id="sexInput" name="sexInput" placeholder="Sesso"
                     [(ngModel)]="jsonIn.sesso" required>
-                <label for="sexInput">Sesso</label>
-                <select id="sexInput" class="form-select">
-                    <option selected>Maschio</option>
+                    <option value="maschio" selected>Maschio</option>
                     <option>Femmina</option>
                 </select>
+                <label for="sexInput">Sesso</label>
             </div>
             <div class="form-floating">
                 <input type="email" class="form-control" id="emailInput" name="emailInput" placeholder="Email"

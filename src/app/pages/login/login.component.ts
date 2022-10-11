@@ -16,21 +16,23 @@ export class LoginComponent {
   @ViewChild('loginForm') loginForm!: NgForm;
   showErrors = false;
   showPassword = false;
-  
-  constructor(private router: Router) {}
 
-  signIn() {
-    if (this.loginForm.form.invalid) {
-      this.showErrors = true;
-    } else {
-      this.router.navigateByUrl('/home');
-    }
-  }
+  constructor(private router: Router) { }
 
   eyeCheck = {
     enable: '🐵',
     disabled: '🙈'
   }
+
+  signIn() {
+    if (this.loginForm.form.invalid) {
+      this.showErrors = true;
+    } else {
+      this.router.navigateByUrl("/home");
+    }
+  }
+
+
 
 
 }
