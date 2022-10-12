@@ -1,10 +1,10 @@
 <main class="container">
     <div class="row">
-        <div class="col-6 m-auto">
+        <div class="col-10 m-auto">
             <form class="needs-validation" [class.was-validated]="showErrors" #utente="ngForm">
                 <h1 class="h3 mb-3 fw-normal text-center mt-2">Inserisci dati</h1>
                 <div class="row g-4 m-3">
-                    <div class="col">
+                    <div class="col-3">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="userType" id="flexRadioDefault1"
                                 value="PersonaFisica" checked [(ngModel)]="jsonIn.userType">
@@ -28,22 +28,22 @@
 
                 <div *ngIf="jsonIn.userType==='PersonaGiuridica'">
 
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="ragioneSocialeInput" name="ragioneSocialeInput"
                             placeholder="Ragione Sociale" [(ngModel)]="jsonIn.ragioneSociale" required>
                         <label for="nameInput">Nome Azienda</label>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="pecInput" name="pecInput" placeholder="PEC"
                             [(ngModel)]="jsonIn.pec" required>
                         <label for="pecInput">Pec</label>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="faxInput" name="faxInput" placeholder="FAX"
                             [(ngModel)]="jsonIn.fax" required>
                         <label for="faxInput">FAX</label>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="partitaIvaInput" name="partitaIvaInput"
                             placeholder="Partta Iva" [(ngModel)]="jsonIn.partitaIva" required>
                         <label for="faxInput">Partita Iva</label>
@@ -51,53 +51,62 @@
                 </div>
 
                 <div *ngIf="jsonIn.userType==='PersonaFisica'">
-                    <div class="form-floating">
-                        <input type="name" class="form-control" id="nameInput" name="nameInput" placeholder="Name"
-                            [(ngModel)]="jsonIn.name" required>
-                        <label for="nameInput">Name</label>
-                    </div>
-                    <div class="form-floating">
-                        <input type="surname" class="form-control" id="surnameInput" name="surnameInput"
-                            placeholder="Surname" [(ngModel)]="jsonIn.surname" required>
-                        <label for="nameInput">Cognome</label>
-                    </div>
-                    <div class="form-floating">
+                    <div class="row g-2">
+                        <div class="col-md mb-3">
+                            <div class="form-floating">
+                                <input type="name" class="form-control" id="nameInput" name="nameInput"
+                                    placeholder="Name" [(ngModel)]="jsonIn.name" required>
+                                <label for="nameInput">Nome</label>
+                            </div>
+                        </div>
+                        <div class="col-md mb-3">
+                            <div class="form-floating">
+                                <input type="surname" class="form-control" id="surnameInput" name="surnameInput"
+                                    placeholder="Surname" [(ngModel)]="jsonIn.surname" required>
+                                <label for="nameInput">Cognome</label>
+                            </div>
+                        </div>
 
-                        <select id="sexInput" class="form-select" id="sexInput" name="sexInput" placeholder="Sesso"
-                            [(ngModel)]="jsonIn.sesso" required>
-                            <option value="maschio" selected>Maschio</option>
-                            <option>Femmina</option>
-                        </select>
-                        <label for="sexInput">Sesso</label>
+                        <div class="col-md mb-3">
+                            <div class="form-floating">
+
+                                <select id="sexInput" class="form-select" id="sexInput" name="sexInput"
+                                    placeholder="Sesso" [(ngModel)]="jsonIn.sesso" required>
+                                    <option value="maschio" selected>M</option>
+                                    <option>F</option>
+                                </select>
+                                <label for="sexInput">Sesso</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="emailInput" name="emailInput" placeholder="Email"
                             [(ngModel)]="jsonIn.email" required>
                         <label for="emailInput">Email</label>
                     </div>
 
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="phoneInput" name="phoneInput" placeholder="Phone"
                             [(ngModel)]="jsonIn.telefono" required>
                         <label for="phoneInput">Telefono</label>
                     </div>
 
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="addressInput" name="addressInput"
                             placeholder="Address" [(ngModel)]="jsonIn.indirizzo.via" required>
                         <label for="addressInput">Indirizzo</label>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="addressNumInput" name="addressNumInput"
                             placeholder="Address Num" [(ngModel)]="jsonIn.indirizzo.numeroCivico" required>
                         <label for="addressNumInput">Numero Civico</label>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="cityInput" name="cityInput" placeholder="City"
                             [(ngModel)]="jsonIn.indirizzo.comune" required>
                         <label for="cityInput">Comune</label>
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
 
                         <select id="provinceInput" class="form-select" name="provinceInput" placeholder="Province"
                             [(ngModel)]="jsonIn.indirizzo.provincia" required>
@@ -109,7 +118,7 @@
                         <label for="provinceInput">Provincia</label>
 
                     </div>
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
 
                         <select id="stateInput" class="form-select" name="stateInput" placeholder="State"
                             [(ngModel)]="jsonIn.indirizzo.stato" required>
