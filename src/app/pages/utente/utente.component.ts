@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class UserComponent {
     jsonIn = {
-        userType: 'PersonaGiuridica',
+        userType: 'PersonaFisica',
         name: '',
         surname: '',
         ragioneSociale: '',
