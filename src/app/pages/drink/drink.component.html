@@ -1,0 +1,23 @@
+<div class="card-group">
+    <div class="card m-auto p-4" style="width: 18rem;">
+        <img class="card-img-top m-auto" style="width: 50%;" src="{{ drinkData.strDrinkThumb }}"
+            alt="{{drinkData.strDrink}}">
+        <div class="card-body">
+            <h4 class="card-title">{{ drinkData.strDrink }}</h4>
+            <p>Istruction:</p>
+            <p>{{ drinkData.strInstructions }}</p>
+            <h5 class="card-title">Ingredients</h5>
+            <ul>
+                <li *ngFor="let ingredient of drinkData.ingredients">
+                    {{ ingredient.name }}: {{ ingredient.measure }}
+                </li>
+            </ul>
+        </div>
+        <div class="col-2 m-auto p-4">
+            <button routerLink="/home" class="btn btn-primary">HOME</button>
+        </div>
+    </div>
+
+
+
+</div>

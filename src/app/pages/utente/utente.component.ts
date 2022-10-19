@@ -38,13 +38,7 @@ export class UserComponent {
 
     constructor(private router: Router) { }
 
-    signIn() {
-        if (this.utente.form.invalid) {
-            this.showErrors = true;
-        } else {
-            this.router.navigateByUrl('/home');
-        }
-    }
+
 
     //soluzione 1
     pulisci() {

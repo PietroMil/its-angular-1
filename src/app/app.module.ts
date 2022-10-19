@@ -9,20 +9,23 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/utente/utente.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-
+import { HttpClientModule } from '@angular/common/http'
+import { DrinkComponent } from './pages/drink/drink.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    DrinkComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
