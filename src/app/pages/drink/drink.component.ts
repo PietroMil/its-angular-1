@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { DrinkService } from 'src/app/drink.servie';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ export class DrinkComponent implements OnInit {
 
   drinkData: any = {};
 
-  constructor(private route: ActivatedRoute, private httpClient: HttpClient) {
+  constructor(private route: ActivatedRoute, private httpClient: HttpClient, private drinkService: DrinkService) {
 
   }
 
@@ -21,18 +22,9 @@ export class DrinkComponent implements OnInit {
       .subscribe((response: any) => {
         console.log(response)
         this.drinkData = response.drinks[0]
-        this.drinkData.ingredients = []
-        this.drinkData.istru
-        Object.keys(this.drinkData).forEach((key) => {
-          if (key.startsWith('strIngredient') && this.drinkData[key]) {
-            const index = key.replace('strIngredient', '');
-            console.log(index);
-            this.drinkData.ingredients.push({
-              name: this.drinkData[key],
-              measure: this.drinkData['strMeasure' + index]
-            });
-          }
-        })
+
+        this.drinkService.drinkIngredient(this.drinkData)
+
 
       })
 
