@@ -9,7 +9,11 @@ import { DrinkService } from 'src/app/drink.servie';
 })
 export class DrinkComponent implements OnInit {
 
-  drinkData: any = {};
+
+  drinkData: any = {
+    ingredients: [],
+    instructions: []
+  };
 
   constructor(private route: ActivatedRoute, private httpClient: HttpClient, private drinkService: DrinkService) {
 

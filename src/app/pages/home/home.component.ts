@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../_service/api.service';
 
 @Component({
   selector: 'app-home',
@@ -8,32 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   drinks: any;
+  randomDrink: any;
   searchfield: any;
+  alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w', 'v', 'x', 'y', 'z'];
+  firstLetter = '';
+  iNull: boolean = false;
 
-
-  constructor(private httpClient: HttpClient) {
-    //qui indico solo i servizi ..ovvero i moduli
-  }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    console.log('init');
-    this.httpClient.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=spritz')
+    this.apiService.searchRandom()
       .subscribe((response: any) => {
-        //console.log(response)
-        this.drinks = response.drinks
-      })
+        this.randomDrink = response.drinks[0]
+      });
+    this.search('a')
   }
 
-  search() {
-    const search = this.searchfield;
-    console.log(search)
-    this.httpClient.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${search}`)
+  search(letter: string) {
+
+    this.firstLetter = letter
+    this.apiService.searchCocktailByFirstLetter(letter)
       .subscribe((response: any) => {
-        //console.log(response)
         this.drinks = response.drinks
+        if (response.drinks === null) {
+          this.iNull = true
+        } else {
+          this.iNull = false
+        }
       })
   }
-
 
 
 

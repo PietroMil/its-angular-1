@@ -5,11 +5,13 @@
         <div class="card-body">
             <h4 class="card-title">{{ drinkData.strDrink }}</h4>
             <p>Istruction:</p>
-            <p>{{ drinkData.strInstructions }}</p>
+            <p>{{ drinkData.instructions.EN }}</p>
+
             <h5 class="card-title">Ingredients</h5>
             <ul>
                 <li *ngFor="let ingredient of drinkData.ingredients">
                     {{ ingredient.name }}: {{ ingredient.measure }}
+
                 </li>
             </ul>
         </div>

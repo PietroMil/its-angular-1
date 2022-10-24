@@ -11,13 +11,15 @@ import { UserComponent } from './pages/utente/utente.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { HttpClientModule } from '@angular/common/http'
 import { DrinkComponent } from './pages/drink/drink.component';
+import { SearchComponent } from './pages/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
     UserComponent,
-    DrinkComponent
+    DrinkComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
