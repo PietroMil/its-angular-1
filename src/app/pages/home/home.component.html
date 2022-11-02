@@ -12,7 +12,7 @@
     <div class="col">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ">
             <div class="card shadow-sm m-auto text-bg-primary">
-                <img src="{{ randomDrink.strDrinkThumb }}" class="card-img-top" alt="{{ randomDrink.strDrink }}">
+                <img [src]="randomDrink.strDrinkThumb" class="card-img-top" alt="{{ randomDrink.strDrink }}">
 
                 <div class="card-body">
                     <h5 class="card-title">{{ randomDrink.strDrink }}</h5>
@@ -45,7 +45,7 @@
 
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="{{ drink.strDrinkThumb }}" class="card-img-top" alt="{{ drink.strDrink }}">
+                        <img [src]="drink.strDrinkThumb" class="card-img-top" [alt]="drink.strDrink">
 
                         <div class="card-body">
                             <h5 class="card-title">{{ drink.strDrink }}</h5>
