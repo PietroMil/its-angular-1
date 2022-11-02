@@ -18,7 +18,7 @@
             <h4>Language</h4>
             <div class="container">
                 <div class="d-flex flex-row">
-                    <div class="col-md-2" *ngFor="let item of drinkData.instructions | keyvalue">
+                    <div class="p-1" *ngFor="let item of drinkData.instructions | keyvalue">
                         <button (click)="onchangeLang(item.key)" class="btn btn-primary">{{item.key}}</button>
                     </div>
                 </div>

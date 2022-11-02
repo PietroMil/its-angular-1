@@ -10,10 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class IngredientComponent implements OnInit {
 
-  ingredientDetail: any = {
-    ingredients: [
-      { strIngredient: '' }
-    ]
+  ingredient: any = {
+    ingredient: []
   }
 
 
@@ -29,7 +27,8 @@ export class IngredientComponent implements OnInit {
 
     this.apiService.getIngredientDetail(ingredientName).subscribe((resp: any) => {
       console.log(resp)
-      this.ingredientDetail = resp.ingredients[0]
+
+      this.ingredient = resp.ingredients[0]
 
     })
 
