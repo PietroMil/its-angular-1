@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { DrinkService } from 'src/app/drink.servie';
+import { DrinkService } from 'src/app/pages/_service/drink.service';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +12,18 @@ export class DrinkComponent implements OnInit {
 
   drinkData: any = {
     ingredients: [],
-    instructions: []
+    instructions: [],
+
   };
+
+  currentLang = 'EN'
 
   constructor(private route: ActivatedRoute, private httpClient: HttpClient, private drinkService: DrinkService) {
 
+  }
+
+  onchangeLang(lang: any): void {
+    this.currentLang = lang
   }
 
   ngOnInit(): void {
@@ -25,11 +32,12 @@ export class DrinkComponent implements OnInit {
     this.httpClient.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id)
       .subscribe((response: any) => {
         console.log(response)
+
         this.drinkData = response.drinks[0]
 
         this.drinkService.drinkIngredient(this.drinkData)
 
-
+        console.log(this.drinkData)
       })
 
   }

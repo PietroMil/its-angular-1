@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   searchfield: any;
   alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w', 'v', 'x', 'y', 'z'];
   firstLetter = '';
-  iNull: boolean = false;
+  isNull: boolean = false;
 
   constructor(private apiService: ApiService) { }
 
@@ -31,9 +31,9 @@ export class HomeComponent implements OnInit {
       .subscribe((response: any) => {
         this.drinks = response.drinks
         if (response.drinks === null) {
-          this.iNull = true
+          this.isNull = true
         } else {
-          this.iNull = false
+          this.isNull = false
         }
       })
   }

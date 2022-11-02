@@ -12,9 +12,16 @@
     </div>
     <div class="col-4 p-4">
         <form class="d-flex">
-            <input class="form-control-sm me-2" type="search" placeholder="Search by ingredient" aria-label="Search"
-                [(ngModel)]="secondsearchfield" name="search">
+            <select [(ngModel)]="ingredientQuery" name="ingredient" class="form-select me-2"
+                aria-label="Default select example">
+                <option [value]="''" selected>Search by ingredients</option>
+                <option *ngFor="let ingredient of ingredients" [value]="ingredient.strIngredient1">{{
+                    ingredient.strIngredient1
+                    }}
+                </option>
+            </select>
             <button class="btn btn-outline-success" type="submit" (click)="searchByIngredient()">Search</button>
+
         </form>
     </div>
 </div>

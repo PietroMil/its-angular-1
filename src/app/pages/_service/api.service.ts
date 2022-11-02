@@ -37,4 +37,13 @@ export class ApiService {
             .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
     }
 
+    getIngredients(): any {
+        return this.httpClient
+            .get('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
+    }
+
+    getIngredientDetail(ingredient: string): any {
+        return this.httpClient
+            .get('https://www.thecocktaildb.com/api/json/v1/1/search.php?i=' + ingredient)
+    }
 }

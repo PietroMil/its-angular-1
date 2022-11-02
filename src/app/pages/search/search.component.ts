@@ -9,9 +9,20 @@ export class SearchComponent implements OnInit {
     drinks: any;
     searchfield: any;
     secondsearchfield: any;
+    ingredients: any;
+    ingredientQuery: string = '';
+
     constructor(private apiService: ApiService) { }
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+
+        this.apiService.getIngredients()
+            .subscribe((response: any) => {
+                this.ingredients = response.drinks
+                console.log(this.ingredients)
+            })
+
+    }
 
     searchByName() {
         const searchname = this.searchfield
@@ -22,10 +33,12 @@ export class SearchComponent implements OnInit {
     }
 
     searchByIngredient() {
-        const searchname = this.secondsearchfield
+        const searchname = this.ingredientQuery
         this.apiService.searchCocktailByIngredient(searchname)
             .subscribe((response: any) => {
                 this.drinks = response.drinks
             })
     }
+
+
 }
