@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { DrinkService } from 'src/app/pages/_service/drink.service';
+import { DrinkService } from 'src/app/_service/drink.service';
 
 @Component({
   selector: 'app-home',

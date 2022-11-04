@@ -12,6 +12,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { HttpClientModule } from '@angular/common/http'
 import { DrinkComponent } from './pages/drink/drink.component';
 import { SearchComponent } from './pages/search/search.component';
+import { CardDrinkComponent } from './shared/card-drink/card-drink.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { SearchComponent } from './pages/search/search.component';
     HomeComponent,
     UserComponent,
     DrinkComponent,
-    SearchComponent
+    SearchComponent,
+    CardDrinkComponent
   ],
   imports: [
     BrowserModule,
