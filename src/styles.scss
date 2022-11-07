@@ -24,3 +24,35 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+//custom
+
+body {
+    background: linear-gradient(#e66465, #9198e5);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+
+app-card-drink .card {
+    background-color: rgba(236, 210, 198, 0.514);
+}
+
+app-card-drink .btn-primary {
+    background-color: rgba(236, 22, 22, 0.514);
+}
+
+.btn-primary {
+    --bs-btn-hover-bg: #9198e5;
+    --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
+    border: #e66465
+}
+
+app-list-drink .selected {
+    background-color: yellow;
+}
+
+app-list-drink img {
+    height: 100px;
+    border-radius: 50%;
+}

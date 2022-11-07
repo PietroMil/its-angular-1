@@ -38,6 +38,10 @@ export class HomeComponent implements OnInit {
       })
   }
 
+  onCardSelectChange(drink: any, $event: boolean) {
+    console.log("drink", drink, "selezionato?", $event)
+    drink.selected = $event
+  }
 
 
 }

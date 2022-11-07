@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-card-drink',
-  templateUrl: './card-drink.component.html',
+  selector: 'app-list-drink',
+  templateUrl: './list-drink.component.html',
 })
 
-export class CardDrinkComponent {
+export class ListDrinkComponent {
 
   @Input() drink: any;
   @Output() onSelectChange: EventEmitter<boolean> = new EventEmitter();

@@ -6,12 +6,14 @@ import { UserComponent } from './pages/utente/utente.component';
 import { DrinkComponent } from './pages/drink/drink.component';
 import { SearchComponent } from './pages/search/search.component';
 import { IngredientComponent } from './pages/ingredient/ingredient.component';
+import { OrdiniComponent } from './pages/ordini/ordini.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'utente', component: UserComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'ordini', component: OrdiniComponent },
   { path: 'ingredient/:ingredient', component: IngredientComponent },
   { path: 'drink/:idDrink', component: DrinkComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },

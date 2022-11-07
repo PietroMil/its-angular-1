@@ -1,0 +1,5 @@
+<input type="checkbox" (click)="onSelect($event)">
+<div class="d-flex w-100 justify-content-between" [class.selected]="drink.selected">
+    <h5 class="mb-1">{{ drink.strDrink }}</h5>
+    <img [src]="drink.strDrinkThumb + '/preview' " alt="">
+</div>

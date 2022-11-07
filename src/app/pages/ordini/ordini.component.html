@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="col-4 p-4">
+        <div *ngFor="let element of selectedDrinks">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ element.strDrink }}</h5>
+                <img [src]="element.strDrinkThumb + '/preview' " alt="">
+
+            </div>
+            <button (click)="deleteElement(element)">delete</button>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="container">
+    <div class="col-4 p-4">
+        <form class="d-flex">
+            <input class="form-control-sm me-2" type="search" placeholder="Search by name" aria-label="Search"
+                [(ngModel)]="searchfield" name="search">
+            <button class="btn btn-outline-success" type="submit" (click)="searchByName()">Search</button>
+        </form>
+    </div>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div *ngFor="let drink of drinks">
+                    <div class="list-group">
+                        <app-list-drink (onSelectChange)="onCardSelectChange(drink, $event)" [drink]="drink">
+                        </app-list-drink>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

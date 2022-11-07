@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { DrinkComponent } from './pages/drink/drink.component';
 import { SearchComponent } from './pages/search/search.component';
 import { CardDrinkComponent } from './shared/card-drink/card-drink.component';
+import { OrdiniComponent } from './pages/ordini/ordini.component';
+import { ListDrinkComponent } from './shared/list-drink/list-drink.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import { CardDrinkComponent } from './shared/card-drink/card-drink.component';
     UserComponent,
     DrinkComponent,
     SearchComponent,
-    CardDrinkComponent
+    CardDrinkComponent,
+    OrdiniComponent,
+    ListDrinkComponent
   ],
   imports: [
     BrowserModule,

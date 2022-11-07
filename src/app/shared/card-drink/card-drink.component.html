@@ -1,5 +1,7 @@
+<input type="checkbox" (click)="onSelect($event)">
 <div class="col">
-    <div class="card shadow-sm">
+    <div class="card shadow-sm" [class.selected]="drink.selected" [routerLink]="'/drink/' + drink.idDrink"
+        role="button">
         <img [src]="drink.strDrinkThumb" class="card-img-top" [alt]="drink.strDrink">
         <div class="card-body">
             <h5 class="card-title">{{ drink.strDrink }}</h5>
