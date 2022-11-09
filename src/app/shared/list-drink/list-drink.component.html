@@ -1,11 +1,10 @@
 <div class="d-flex w-100 justify-content-between" [class.selected]="drink.selected">
-    <input style="display: none" type="checkbox" [id]="drink.strDrink" (click)="onSelect($event)" #checkBox
-        [checked]="selected">
+
     <h5 class="mb-1">{{ drink.strDrink }}</h5>
     <label [for]="drink.strDrink">
-        <div *ngIf="checkBox.checked && selected"><img style="cursor: pointer" src="../../../assets/check-png.png"
+        <div *ngIf="selected"><img (click)="onSelect(false)" style="cursor: pointer" src="../../../assets/check-png.png"
                 alt=""></div>
-        <div *ngIf="!checkBox.checked || !selected"><img style="cursor: pointer"
+        <div *ngIf="!selected"><img (click)="onSelect(true)" style="cursor: pointer"
                 [src]="drink.strDrinkThumb + '/preview' " alt="">
         </div>
     </label>

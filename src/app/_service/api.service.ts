@@ -25,6 +25,7 @@ export class ApiService {
     searchCocktailByName(name: string): any {
         return this.httpClient
             .get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + name)
+
     }
 
     searchCocktailByIngredient(ingredient: string): any {

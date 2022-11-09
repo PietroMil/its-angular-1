@@ -8,11 +8,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class CardDrinkComponent {
 
   @Input() drink: any;
-  @Output() onSelectChange: EventEmitter<boolean> = new EventEmitter();
 
-  onSelect($event: any) {
-
-    this.onSelectChange.emit($event.currentTarget.checked)
-  }
 
 }

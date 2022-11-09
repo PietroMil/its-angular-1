@@ -11,9 +11,15 @@ export class ListDrinkComponent {
   @Input() selected!: boolean;
   @Output() onSelectChange: EventEmitter<boolean> = new EventEmitter();
 
-  onSelect($event: any) {
+  onSelect(param: boolean) {
 
-    this.onSelectChange.emit($event.currentTarget.checked)
+    this.onSelectChange.emit(param)
+
   }
 
+
+
 }
+
+
+

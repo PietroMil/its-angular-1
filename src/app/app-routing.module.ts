@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'ordini', component: OrdiniComponent },
   { path: 'ingredient/:ingredient', component: IngredientComponent },
   { path: 'drink/:idDrink', component: DrinkComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', component: LoginComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: HomeComponent },
 
 ];
 

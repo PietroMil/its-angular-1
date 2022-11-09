@@ -15,6 +15,7 @@ import { SearchComponent } from './pages/search/search.component';
 import { CardDrinkComponent } from './shared/card-drink/card-drink.component';
 import { OrdiniComponent } from './pages/ordini/ordini.component';
 import { ListDrinkComponent } from './shared/list-drink/list-drink.component';
+import { NavComponent } from './shared/navbar/nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { ListDrinkComponent } from './shared/list-drink/list-drink.component';
     SearchComponent,
     CardDrinkComponent,
     OrdiniComponent,
-    ListDrinkComponent
+    ListDrinkComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

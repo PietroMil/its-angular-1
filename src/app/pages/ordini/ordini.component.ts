@@ -24,8 +24,10 @@ export class OrdiniComponent {
 
     searchByName() {
         const searchname = this.searchfield
+
         this.apiService.searchCocktailByName(searchname)
             .subscribe((response: any) => {
+
                 this.drinks = response.drinks
                 this.drinks.forEach((element: any) => {
                     this.selectedDrinks.forEach((el: any) => {
@@ -34,24 +36,32 @@ export class OrdiniComponent {
                         }
                     });
                 });
+            }, (error: any) => {
+                console.log(error);
             })
     }
 
-    onCardSelectChange(drinks: any, $event: boolean) {
-        console.log("drink", drinks, "selezionato?", $event)
-        if (this.selectedDrinks.length === 5) {
-            return
-        }
-        drinks.selected = $event
+    onCardSelectChange(drink: any, $event: boolean) {
+        console.log("drink", drink, "selezionato?", $event)
+
         if ($event) {
-            this.selectedDrinks.push(drinks)
+            if (this.selectedDrinks.length === 5) {
+                return
+            } else {
+                drink.selected = $event
+                this.selectedDrinks.push(drink)
+            }
+
 
         } else {
-            this.selectedDrinks = this.selectedDrinks.filter((el: any) => el !== drinks)
+            drink.selected = $event
+            this.selectedDrinks = this.selectedDrinks.filter((el: any) => el.idDrink !== drink.idDrink)
 
         }
         this.handleErrors()
     }
+
+
 
     handleErrors() {
         if (this.selectedDrinks.length === 0) {
@@ -81,9 +91,9 @@ export class OrdiniComponent {
         }
     }
 
-    deleteElement(drinks: any,) {
-        drinks.selected = false
-        this.selectedDrinks = this.selectedDrinks.filter((el: any) => el !== drinks)
+    deleteElement(drink: any,) {
+        drink.selected = false
+        this.selectedDrinks = this.selectedDrinks.filter((el: any) => el.idDrink !== drink.idDrink)
     }
 
 
