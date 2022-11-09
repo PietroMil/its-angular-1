@@ -42,6 +42,8 @@ app-card-drink .btn-primary {
     background-color: rgba(236, 22, 22, 0.514);
 }
 
+
+
 .btn-primary {
     --bs-btn-hover-bg: #9198e5;
     --bs-btn-hover-border-color: var(--bs-btn-hover-bg);
@@ -49,7 +51,7 @@ app-card-drink .btn-primary {
 }
 
 app-list-drink .selected {
-    background-color: yellow;
+    background-color: rgba(255, 255, 0, 0.247);
 }
 
 app-list-drink img {

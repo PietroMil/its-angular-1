@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ListDrinkComponent {
 
   @Input() drink: any;
+  @Input() selected!: boolean;
   @Output() onSelectChange: EventEmitter<boolean> = new EventEmitter();
 
   onSelect($event: any) {
