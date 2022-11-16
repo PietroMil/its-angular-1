@@ -7,13 +7,16 @@ import { DrinkComponent } from './pages/drink/drink.component';
 import { SearchComponent } from './pages/search/search.component';
 import { IngredientComponent } from './pages/ingredient/ingredient.component';
 import { OrdiniComponent } from './pages/ordini/ordini.component';
-import { routeResolver } from './_service/routeResolve.service';
+import { lookupDrinkByIDResolver } from './_resolvers/lookupdrink-by-id.resolver';
+import { homeRandomResolver } from './_resolvers/homeRandom.resolver';
+import { homeSearchResolver } from './_resolvers/homeSearch.resolver';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
-    path: 'home', component: HomeComponent, resolve: {
-      drink: routeResolver
+    path: 'home/:letter', component: HomeComponent, resolve: {
+      drinkRandom: homeRandomResolver,
+      drinksSearch: homeSearchResolver,
     }
   },
   { path: 'utente', component: UserComponent },
@@ -23,9 +26,11 @@ const routes: Routes = [
   { path: 'ordini', component: OrdiniComponent },
   { path: 'ingredient/:ingredient', component: IngredientComponent },
   {
-    path: 'drink/:idDrink', component: DrinkComponent
+    path: 'drink/:idDrink', component: DrinkComponent, resolve: {
+      drink: lookupDrinkByIDResolver
+    }
   },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home/a', pathMatch: 'full' },
   { path: '**', component: HomeComponent },
 
 
