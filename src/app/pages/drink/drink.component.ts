@@ -18,7 +18,7 @@ export class DrinkComponent implements OnInit {
 
   currentLang = 'EN'
 
-  constructor(private route: ActivatedRoute, private httpClient: HttpClient, private drinkService: DrinkService) {
+  constructor(private route: ActivatedRoute, private activatedRoute: ActivatedRoute, private httpClient: HttpClient, private drinkService: DrinkService) {
 
   }
 
@@ -27,6 +27,8 @@ export class DrinkComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
     const id = this.route.snapshot.paramMap.get('idDrink')!;
 
     this.httpClient.get("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id)
@@ -42,5 +44,6 @@ export class DrinkComponent implements OnInit {
 
   }
 }
+
 
 //usare Object.keys dato un oggetto restituisci le chiavi

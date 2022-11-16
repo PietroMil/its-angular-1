@@ -16,6 +16,7 @@ import { CardDrinkComponent } from './shared/card-drink/card-drink.component';
 import { OrdiniComponent } from './pages/ordini/ordini.component';
 import { ListDrinkComponent } from './shared/list-drink/list-drink.component';
 import { NavComponent } from './shared/navbar/nav.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { NavComponent } from './shared/navbar/nav.component';
     CardDrinkComponent,
     OrdiniComponent,
     ListDrinkComponent,
-    NavComponent
+    NavComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,7 @@ import { NavComponent } from './shared/navbar/nav.component';
     NgbModule,
     FormsModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

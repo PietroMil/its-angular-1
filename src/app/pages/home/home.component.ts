@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../_service/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,14 +15,20 @@ export class HomeComponent implements OnInit {
   firstLetter = '';
   isNull: boolean = false;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.apiService.searchRandom()
-      .subscribe((response: any) => {
-        this.randomDrink = response.drinks[0]
-      });
-    this.search('a')
+    console.log(this.activatedRoute.data)
+    this.activatedRoute.data.subscribe(({ drink }) => {
+      // do something with your resolved data ...
+      console.log(drink)
+      this.apiService.searchRandom()
+        .subscribe((response: any) => {
+          this.randomDrink = response.drinks[0]
+        })
+      this.search('a');
+    })
+
   }
 
   search(letter: string) {

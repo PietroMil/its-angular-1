@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../_service/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -12,16 +13,14 @@ export class SearchComponent implements OnInit {
     ingredients: any;
     ingredientQuery: string = '';
 
-    constructor(private apiService: ApiService) { }
+    constructor(private apiService: ApiService,) { }
 
     ngOnInit(): void {
-
         this.apiService.getIngredients()
             .subscribe((response: any) => {
                 this.ingredients = response.drinks
                 console.log(this.ingredients)
             })
-
     }
 
     searchByName() {
@@ -39,6 +38,8 @@ export class SearchComponent implements OnInit {
                 this.drinks = response.drinks
             })
     }
-
-
 }
+
+
+
+
