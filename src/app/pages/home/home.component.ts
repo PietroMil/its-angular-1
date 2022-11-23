@@ -18,9 +18,9 @@ export class HomeComponent implements OnInit {
 
   isNull: boolean = false;
 
-  randomDrink!: Drink
+  randomDrink: any
 
-  constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     console.log(this.activatedRoute.data)
