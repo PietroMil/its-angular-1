@@ -27,11 +27,6 @@
 
 //custom
 
-body {
-    background: linear-gradient(#e66465, #9198e5);
-    background-repeat: no-repeat;
-    min-height: 100vh;
-}
 
 
 app-card-drink .card {
@@ -55,6 +50,6 @@ app-list-drink .selected {
 }
 
 app-list-drink img {
-    height: 100px;
+    height: 50px;
     border-radius: 50%;
 }

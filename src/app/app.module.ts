@@ -16,6 +16,8 @@ import { CardDrinkComponent } from './shared/card-drink/card-drink.component';
 import { OrdiniComponent } from './pages/ordini/ordini.component';
 import { ListDrinkComponent } from './shared/list-drink/list-drink.component';
 import { NavComponent } from './shared/navbar/nav.component';
+import { BlockUIModule } from 'ng-block-ui';
+import { BlockUIHttpModule } from 'ng-block-ui/http';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { NavComponent } from './shared/navbar/nav.component';
     FormsModule,
     FontAwesomeModule,
     HttpClientModule,
+    BlockUIModule.forRoot(), // Import BlockUIModule
+    BlockUIHttpModule.forRoot(), // Import Block UI Http Module
   ],
   providers: [],
   bootstrap: [AppComponent]
