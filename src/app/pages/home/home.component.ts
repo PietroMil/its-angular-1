@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../_service/api.service';
 import { ActivatedRoute } from '@angular/router';
-import { Drink } from 'src/app/_models/drink.model';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +10,9 @@ export class HomeComponent implements OnInit {
   drinks: any;
 
   searchfield: any;
-  alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w', 'v', 'x', 'y', 'z'];
+  alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
+  alphabet2 = [ 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'w'];
+  alphabet3 = [ 'v', 'x', 'y', 'z'];
   firstLetter = '';
 
 
@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit {
     })
 
   }
-
 
 
   onCardSelectChange(drink: any, $event: boolean) {
